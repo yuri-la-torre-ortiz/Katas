@@ -10,5 +10,14 @@ All letters will be lowercase and all inputs will be valid.
 */
 
 function high(x){
-
+    x = x.split(' ');
+    scores = x.map(word => {
+      let score = 0;
+      const wordArray = word.split('');
+      wordArray.forEach(letter => {
+        score += (letter.charCodeAt(0) - 96);
+      })
+      return score
+     })
+    return x[scores.indexOf(Math.max(...scores))]
 }
