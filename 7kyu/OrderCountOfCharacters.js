@@ -6,7 +6,9 @@ orderedCount("abracadabra") == [['a', 5], ['b', 2], ['r', 2], ['c', 1], ['d', 1]
 
 var orderedCount = function (text) {
   // Implement me!
-  return [];
+  return text.length !== 0 ? [...new Set(text)].map(elem => {
+    return [elem, text.split([elem]).length -1]
+}): []
 }
 
 orderedCount("abracadabra")
