@@ -6,3 +6,8 @@ freq_seq("^^^**$", "x"); // => "3x3x3x2x2x1"
 */
 function freqSeq(str, sep) {}
 
+function freqSeq(str, sep) {
+    return str.split('')
+    .map(char =>{ return str.split(char).length -1; })
+    .join(sep);
+}
