@@ -9,5 +9,11 @@ return the three product names with the highest revenue (amount * price).
 Note: if multiple products have the same revenue, order them according to their original positions in the input list.
 
 function top3(products, amounts, prices) {
-    return
+    return amounts.map((amount, index) => {
+      return [products[index], amount * prices[index]]
+    }).sort((a,b) => {
+      return b[1] - a[1]
+    }).slice(0,3).map(elem => {
+      return elem[0]
+    })
 }
