@@ -10,9 +10,9 @@ Note: if multiple products have the same revenue, order them according to their 
 
 function top3(products, amounts, prices) {
     return amounts.map((amount, index) => {
-      return [products[index], amount * prices[index]]
+      return [products[index], amount * prices[index], index]
     }).sort((a,b) => {
-      return b[1] - a[1]
+      return b[1] - a[1] || a[2] - b[2]
     }).slice(0,3).map(elem => {
       return elem[0]
     })
