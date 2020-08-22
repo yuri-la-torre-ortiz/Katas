@@ -36,4 +36,14 @@ P.S. The situation in this kata can be likened to the more-computer-science-rela
 */
 
 function queueTime(customers, n) {
+    if (!customers || n === 0 || customers === []) return 0;
+    const checkoutTill = Array(n).fill(0)
+    customers.forEach(customer =>{
+      checkoutTill.sort((a,b) => {
+        return a-b
+      })
+      checkoutTill[0] += customer
+      
+    })
+    return Math.max(...checkoutTill)
 }
