@@ -11,4 +11,9 @@ spinWords( "This is another test" )=> returns "This is rehtona test"
 
 function spinWords(string){
     //TODO Have fun :)
+    let arr = [];
+    string.split(' ').forEach(word => {
+      word.length < 5 ? arr.push(word) : arr.push(word.split('').reverse().join(''))
+    });
+    return arr.join(' ');
 }
