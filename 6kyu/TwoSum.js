@@ -14,4 +14,14 @@ twoSum [1, 2, 3] 4 === (0, 2)
 */
 function twoSum(numbers, target) {
     // ...
+     var result = [];
+     numbers.forEach((number, i) => {
+      const array = numbers.slice(i + 1);
+         array.forEach(num => {
+         if (number + num === target) {
+       result = [numbers.indexOf(number), numbers.lastIndexOf(num)]
+        }
+      })
+    })
+    return result
 }
