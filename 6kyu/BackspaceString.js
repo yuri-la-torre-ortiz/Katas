@@ -11,4 +11,15 @@ Examples
 */
 
 function cleanString(s) {
+	//... your code ...
+  s = s.split('');
+  let array = []
+  s.forEach((element, index) => {
+    array.push((element));
+    if(element === '#' ) { 
+      array.pop(); 
+      array.pop();
+    } 
+  });
+  return array.join('')
 };
