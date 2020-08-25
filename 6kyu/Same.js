@@ -36,4 +36,13 @@ The two arrays have the same size (> 0) given as parameter in function comp.
 */
 
 function comp(array1, array2){
+    if (!array1 || !array2) return false
+    const array3 = array1.map(number=> {
+      return number**2
+    })
+    return JSON.stringify(array3.sort((a, b)=> {
+      return a-b
+    })) === JSON.stringify(array2.sort((a, b)=> {
+      return a-b
+    }))
 }
