@@ -17,4 +17,14 @@ cakes({apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100}, {sugar: 500, flo
 */
 function cakes(recipe, available) {
     // TODO: insert code
+    if (!recipe || !available) return 0 
+    var cakes = [];
+    for (const ingredient in recipe) {
+      if(ingredient in available) {
+       cakes.push(Math.floor(available[ingredient]/recipe[ingredient]))
+      } else {
+        return 0
+      }
+    }
+    return Math.min(...cakes) 
 }
