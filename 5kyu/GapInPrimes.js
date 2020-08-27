@@ -22,8 +22,24 @@ n if these numbers exist otherwise nil or null or None or Nothing (depending on 
 
 function gap(g, m, n) {
     // your code
-
+  var array = [];
+  for (var i = m; i <= n; i++) {
+    var prime = true;
+    for (var j = 2; j <= Math.sqrt(i); j++) {
+      if (i % j === 0) {
+        prime = false;
+        break;
+      }
+    }
+    if (prime == true) {
+        array.push((i));
+    }
+    if (Math.abs(array[1] - array[0]) === g) return array
+    if (array.length > 2) {
+      array.shift()
+    }
+  }
+  return null
 }
 
 
-gap(8,300,400)
