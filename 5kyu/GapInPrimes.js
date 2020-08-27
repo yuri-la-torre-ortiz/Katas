@@ -19,16 +19,7 @@ n if these numbers exist otherwise nil or null or None or Nothing (depending on 
 
 function gap(g, m, n) {
     // your code
-  var primeNumbers = []
-  for (let num = m; num <= n; num++) {
-    for(let i = 2, s = Math.sqrt(num); i <= s; i++) {
-        if(num % i === 0) continue;
-        if(i === s) {
-        primeNumbers.push(num);
-        }
-    }
-  }
-  return primeNumbers
+
 }
 
 
