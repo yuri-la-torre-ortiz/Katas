@@ -15,7 +15,10 @@ n (integer >= m) which gives the end of the search (n inclusive)
 In the example above gap(2, 3, 50) will return [3, 5] or (3, 5) or {3, 5} which is the first pair between 3 and 50 with a 2-gap.
 
 So this function should return the first pair of two prime numbers spaced with a gap of g between the limits m, 
-n if these numbers exist otherwise nil or null or None or Nothing (depending on the language). */
+n if these numbers exist otherwise nil or null or None or Nothing (depending on the language). 
+#Ref https://en.wikipedia.org/wiki/Prime_gap
+
+*/
 
 function gap(g, m, n) {
     // your code
