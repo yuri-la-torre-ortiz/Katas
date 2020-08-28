@@ -18,4 +18,23 @@ For example: pickPeaks([1, 2, 2, 2, 1]) returns {pos: [1], peaks: [2]} (or equiv
 
 Have fun!
 */
-
+function pickPeaks(arr){
+    //  return {pos:[],peaks:[]}
+  var pos = [];
+  var peaks = [];
+  var plateau = [];
+  arr.forEach((num, i) => {
+    if (arr[i-1] < num && arr[i+1] < num) {
+      pos.push(i);
+      peaks.push(num);
+    }
+    if (arr[i+1] === num || arr[i-1] === num){
+      plateau.push({num, i});
+      if (plateau[0].num > arr[plateau[0].i - 1] && plateau[0].num > arr[plateau[plateau.length -1].i + 1]) {
+        pos.push(plateau[0].i);
+        peaks.push(plateau[0].num);
+      }
+    }
+  })
+  return { peaks, pos }
+}
