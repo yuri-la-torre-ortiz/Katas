@@ -30,7 +30,7 @@ function pickPeaks(arr){
     }
     if (arr[i+1] === num || arr[i-1] === num){
       if(plateaux.length !== 0) {
-        if(num === plateaux[plateaux.length-1].num) {
+        if(num === plateaux[plateaux.length-1].num && i === plateaux[plateaux.length-1].i[plateaux[plateaux.length -1].i.length -1] +1) {
         plateaux[plateaux.length-1].i.push(i);
       } else { plateaux.push({num, i: [i]});
       }}
@@ -42,7 +42,7 @@ function pickPeaks(arr){
       }
      } 
     });
-  return { peaks, pos}
-}
+  return { pos, peaks}
+}}
 pickPeaks([3,2,3,6,4,1,2,3,2,1,2,2,2,1]);
 pickPeaks([1,2,5,4,3,2,3,6,4,1,2,3,3,4,5,3,2,1,2,3,5,5,4,3])
