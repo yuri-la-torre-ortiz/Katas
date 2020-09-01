@@ -43,6 +43,4 @@ function pickPeaks(arr){
      } 
     });
   return { pos, peaks}
-}}
-pickPeaks([3,2,3,6,4,1,2,3,2,1,2,2,2,1]);
-pickPeaks([1,2,5,4,3,2,3,6,4,1,2,3,3,4,5,3,2,1,2,3,5,5,4,3])
+}
